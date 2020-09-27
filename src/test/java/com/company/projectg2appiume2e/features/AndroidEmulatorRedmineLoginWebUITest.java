@@ -25,8 +25,6 @@ public class AndroidEmulatorRedmineLoginWebUITest  extends BaseTest {
 
         configAppiumDriver(cap);
 
-
-
     }
 
 
