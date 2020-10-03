@@ -1,20 +1,20 @@
 package com.company.projectg2appiume2e.features;
 
 import com.company.projectg2appiume2e.base.BaseTest;
+import com.company.projectg2appiume2e.pages.RedmineHomePage;
 import com.company.projectg2appiume2e.pages.RedmineLoginPage;
 import com.company.projectg2appiume2e.util.Urls;
-import io.appium.java_client.remote.AndroidMobileCapabilityType;
-import io.appium.java_client.remote.MobileCapabilityType;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class AndroidEmulatorRedmineLoginWebUITest  extends BaseTest {
+public class AndroidEmulatorRedmineLoginWebUITest extends BaseTest {
 
     private static RedmineLoginPage redmineLoginPage;
 
 
     @Test
-    public void testLoginRedmineEmulatorNexus5Android7(){
+    public void testLoginRedmineEmulatorNexus5Android7() {
 
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("automationName", "UiAutomator2");
@@ -31,6 +31,12 @@ public class AndroidEmulatorRedmineLoginWebUITest  extends BaseTest {
 
         driver.get(Urls.REDMINE_LOGIN);
 
+        redmineLoginPage = new RedmineLoginPage(driver);
+        RedmineHomePage redmineHomePage = redmineLoginPage.login("user", "bitnami1");
+
+        redmineHomePage.clickOnMobileMenu();
+
+        Assert.assertEquals("Usuario incorrecto", "user",redmineHomePage.getUserLoggedMobileEmulation());
 
 
     }
