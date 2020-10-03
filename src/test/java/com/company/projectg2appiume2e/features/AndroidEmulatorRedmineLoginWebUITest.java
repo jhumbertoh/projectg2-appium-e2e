@@ -1,6 +1,7 @@
 package com.company.projectg2appiume2e.features;
 
 import com.company.projectg2appiume2e.base.BaseTest;
+import com.company.projectg2appiume2e.pages.RedmineLoginPage;
 import com.company.projectg2appiume2e.util.Urls;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -8,6 +9,8 @@ import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class AndroidEmulatorRedmineLoginWebUITest  extends BaseTest {
+
+    private static RedmineLoginPage redmineLoginPage;
 
 
     @Test
@@ -27,6 +30,7 @@ public class AndroidEmulatorRedmineLoginWebUITest  extends BaseTest {
         configAppiumDriver(cap);
 
         driver.get(Urls.REDMINE_LOGIN);
+
 
 
     }
