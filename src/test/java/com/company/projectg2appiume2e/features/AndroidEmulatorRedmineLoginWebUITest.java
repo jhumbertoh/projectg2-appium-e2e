@@ -1,6 +1,7 @@
 package com.company.projectg2appiume2e.features;
 
 import com.company.projectg2appiume2e.base.BaseTest;
+import com.company.projectg2appiume2e.util.Urls;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.Test;
@@ -24,6 +25,9 @@ public class AndroidEmulatorRedmineLoginWebUITest  extends BaseTest {
         cap.setCapability("avdArgs", "-port 5557");
 
         configAppiumDriver(cap);
+
+        driver.get(Urls.REDMINE_LOGIN);
+
 
     }
 
