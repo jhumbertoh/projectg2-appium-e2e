@@ -37,8 +37,6 @@ public class AndroidEmulatorRedmineLoginWebUITest extends BaseTest {
         redmineHomePage.clickOnMobileMenu();
 
         Assert.assertEquals("Usuario incorrecto", "user",redmineHomePage.getUserLoggedMobileEmulation());
-
-
     }
 
 
